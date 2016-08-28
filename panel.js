@@ -4,16 +4,8 @@
 // chrome.devtools.*
 // chrome.extension.*
 
-
 var getFormData = function () {
-    /*var unindexed_array = form.serializeArray();
-     var indexed_array = {};
-     $.map(unindexed_array, function (n, i) {
 
-     indexed_array[n['name']] = n['value'];
-     });
-
-     return indexed_array;*/
     var data = {};
     var inputs = [].slice.call(document.getElementsByTagName('input'));
     inputs = inputs.concat([].slice.call(document.getElementsByTagName('textarea')));
@@ -41,8 +33,6 @@ document.getElementById("executescript").addEventListener("click", function(e) {
 //{"tags":"input,table,a","have":"0","entity":"attribute","entity-title":"id"}
     try{
         sendObjectToInspectedPage({action: "code", content: " var links = enumerateObjectsByCriteria('"+formObj+"', null) ; chrome.extension.sendMessage({content:links.toString()}, function(message){});"});
-
-
     }
     catch(e){
         alert(e);
@@ -50,20 +40,6 @@ document.getElementById("executescript").addEventListener("click", function(e) {
 
 }, false);
 
-/*
- document.getElementById('insertscript').addEventListener('click', function(e) {
- sendObjectToInspectedPage({action: "script", content: "inserted-script.js"});
- e.preventDefault();
- }, false);
- */
-
-/*
- document.querySelector('#insertmessagebutton').addEventListener('click', function() {
-
- sendObjectToInspectedPage({action: "code", content: "document.body.innerHTML='<button>Send message to DevTools</button>'"});
- sendObjectToInspectedPage({action: "script", content: "messageback-script.js"});
- }, false);
- */
 
 
 window.onload = function() {
@@ -79,17 +55,7 @@ window.onload = function() {
       function(el){
           el.addEventListener('click', function(e) {
               try{
-                  //var attr = e.target.getAttribute("data-link");
-                  //var cmd= "inspect($('a[href$='"+attr+"']'))"
-                  // var cmdStr = ("\"a[href=\'"+attr+"\']\"");
-                  //   var cmd = 'inspect($('+cmdStr+'))';
-                  // alert(cmd);
-                  // document.querySelector('.results').innerHTML(cmd);
-                  // sendObjectToInspectedPage({action: "code", content: "runInContentWindow()"});
-                  console.log(" this ", e.target)
                   chrome.devtools.inspectedWindow.eval('inspect($("[data-inspect$=\'tab=wX\']"))');
-                  //alert( $('.result-link'));
-                  //goToSource()
                   console.log("==== ", $('.result-link').toString())
                   document.querySelector('#results').innerHTML =  (document.querySelector('.result-link').toString());
               }
