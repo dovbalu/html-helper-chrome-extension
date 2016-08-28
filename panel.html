@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='panel.css'>
+</head>
+<body>
+<div class="form-container content">
+    <form  class="inspection-form" name="inspection-form">
+        <ul>
+            <li> <textarea id="tags" name="tags"
+                           wrap="soft"        >input, table,a</textarea></li>
+            <li> <select id="have" name="have">
+                <option value="1" >Has attribute</option>
+                <option value="0"selected>Doesn't
+                    have attribute </option>
+            </select></li>
+            <li><input
+                    placeholder="id"
+                    value="id"
+                    id="attr" name="attr" >
+                </select></li>
+            <li> <input
+                    placeholder="Attribute value: class name for exmp."
+                    id="attr-value" name="attr-value" ></li>
+            <li>  <button id="executescript">Inspect!</button></li>
+            <!--li>
+                <button id="insertscript">Reload script</button></li-->
+        </ul>
+    </form>
+
+</div>
+<div  class="result-container content">
+    <div id="results">
+    </div>
+</div>
+<!--<script src="zepto.min.js"></script>-->
+<script src="messaging.js"></script>
+<script src="panel.js"></script>
+
+</body>
+</html>

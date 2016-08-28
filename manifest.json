@@ -1,0 +1,22 @@
+{
+    "name": "HTML Helper",
+    "version": "0.1",
+    "description": "Helps visually identify multiple HTML tags by certain criteria",
+    "devtools_page": "devtools.html",
+    "author": "Anna Khiger",
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+    "content_scripts": [ {
+        "js": [ "inserted-script.js" ],
+        "matches": [ "http://*/*", "https://*/*"]
+    }],
+    "permissions": [
+        "tabs", 
+        "http://*/*",
+        "https://*/*"
+    ],
+    "manifest_version": 2
+}

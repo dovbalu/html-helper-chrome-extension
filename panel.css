@@ -1,0 +1,63 @@
+body {
+   padding: 0; margin: 0; border: 0; background-color: #000; font-family: Arial, Helvetica, Sans-Serif;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+body > div{ margin: 0}
+.content{ float: left; display: block}
+.form-container{width: 20%;  }
+.result-container{width: 79%; padding:3px;  }
+#results{width: 100%; font-size: 0.9rem; color: #fff; line-height: 18px;}
+form{width: 100%}
+.tag-title{color:#9B59B6;  border-bottom: solid 1px darkmagenta; font-size: 1.2rem; font-weight: bold; width: 100%;display: block; padding: 0.4rem;}
+.search-term{ color:#fff ; font-size: 1.3rem; font-weight: bold; width: 100%;display: block; padding: 1.2rem 0 0 0.4rem;}
+.no-results{ padding: 1.2rem  1rem;}
+ul{width: 100%; padding: 0; margin: 0}
+ul li {display:block; padding:8px; width: 100% }
+
+ul li * {display:block;   width: 95%;   color: darkmagenta ;  font-family: Arial, Helvetica, Sans-Serif; font-size: 1rem; }
+
+a{color:#ffffff; font-weight: bold}
+a:visited{color: lightpink; font-weight: normal}
+
+input,
+ textarea,
+ select, button{
+
+    border-style: solid;
+    border-width: 5px;
+    border-color: lightgray;
+    -webkit-transition: border-color 0.5s ease-in-out;
+    -moz-transition: border-color 0.5s ease-in-out;
+    -ms-transition: border-color 0.5s ease-in-out;
+    -o-transition: border-color 0.5s ease-in-out;
+    transition: border-color 0.5s ease-in-out;
+
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+
+    padding: 7px 7px 5px 1em;
+
+    outline:none;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: normal;
+
+    font-size: 1em;
+}
+input:focus,
+textarea:focus,
+select:focus, button:focus{
+    border-color: #9B59B6;
+}
+ul li button {
+    color:#ffffff; padding:0.5rem; border: none; font-weight: bold; font-size: 0.9rem; background-color: #9B59B6;
+}
