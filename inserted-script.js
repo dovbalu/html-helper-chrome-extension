@@ -69,4 +69,9 @@ function enumerateObjectsByCriteria(formObj, criteria){
     return  found.join(" ");
 }
 
-console.log(typeof enumerateObjectsByCriteria)
+window.addEventListener("error", function (e) {
+    alert("Error occured: " + e.error.message);
+    return false;
+})
+
+console.log("found ", found)

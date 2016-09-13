@@ -36,6 +36,9 @@ document.getElementById("executescript").addEventListener("click", function(e) {
     }
     catch(e){
         alert(e);
+        sendObjectToInspectedPage({action: "script", content: "inserted-script.js"});
+        sendObjectToInspectedPage({action: "code", content: " var links = enumerateObjectsByCriteria('"+formObj+"', null) ; chrome.extension.sendMessage({content:links.toString()}, function(message){});"});
+
     }
 
 }, false);
