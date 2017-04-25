@@ -9,9 +9,8 @@
 // }
 
 (function createChannel() {
-    //Create a port with background page for continous message communication
     var port = chrome.extension.connect({
-        name: "FlexUI HTML Helper" //Given a Name
+        name: "HTML Helper" //Given a Name
     });
 
     // Listen to messages from the background page
@@ -25,7 +24,6 @@
 
                 el.addEventListener('click', function(e) {
                     var inspectionPoint = e.target.getAttribute("data-inspect");
-                    //chrome.devtools.inspectedWindow.eval('inspect($("[inspect$=\'tab=wX\']"))');
                     chrome.devtools.inspectedWindow.eval(' inspect(document.querySelector("[inspect=\''+inspectionPoint+'\']")) ');
                     e.preventDefault();
                 });

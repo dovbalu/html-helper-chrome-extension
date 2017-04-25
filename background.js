@@ -13,9 +13,7 @@ chrome.extension.onConnect.addListener(function (port) {
 
                           if (chrome.extension.lastError){
                               var errorMsg = chrome.extension.lastError.message;
-                             // if (errorMsg == "Cannot access a chrome:// URL"){
                                   alert(errorMsg);
-                            //  }
                           }
                       });
                       }

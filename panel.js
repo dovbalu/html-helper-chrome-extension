@@ -9,6 +9,7 @@ var getFormData = function () {
     var data = {};
     var inputs = [].slice.call(document.getElementsByTagName('input'));
     inputs = inputs.concat([].slice.call(document.getElementsByTagName('textarea')));
+    inputs = inputs.concat([].slice.call(document.getElementsByTagName('select')));
 
     [].forEach.call(
       inputs,
@@ -28,9 +29,9 @@ var getFormData = function () {
 document.getElementById("executescript").addEventListener("click", function(e) {
 
     e.preventDefault();
-    var formObj= JSON.stringify(getFormData()); //(getFormData($('form')).toString() );
+    var formObj= JSON.stringify(getFormData());
     console.log("+++++", formObj);
-//{"tags":"input,table,a","have":"0","entity":"attribute","entity-title":"id"}
+
     try{
         sendObjectToInspectedPage({action: "code", content: " var links = enumerateObjectsByCriteria('"+formObj+"', null) ; chrome.extension.sendMessage({content:links.toString()}, function(message){});"});
     }

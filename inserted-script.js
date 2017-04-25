@@ -1,5 +1,5 @@
 // This is included and executed in the inspected page
-console.log("FlexUI extension is loaded");
+console.log("HTML helper extension is loaded");
 
 var objectsFound =[];
 
@@ -70,8 +70,11 @@ function enumerateObjectsByCriteria(formObj, criteria){
 }
 
 window.addEventListener("error", function (e) {
-    alert("Error occured: " + e.error.message);
+    if(e.error){
+      alert("Error occured: " + e.error.message);
+    }
+
     return false;
 })
 
-console.log("found ", found)
+//console.log("found ", found)
